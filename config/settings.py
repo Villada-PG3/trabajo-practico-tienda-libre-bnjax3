@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-+y8=^(=t6xoz0x5$stlm_eys1=5vy)hesj6_e&y1x5h*hx551h
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Application definition
 
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,10 +1,135 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <h1>AAAAAAAA</h1>
-        <script src="" async defer></script>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Libre</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#222;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    position:sticky;
+    top:0;
+}
+
+main{
+    padding:25px;
+}
+
+.categoria{
+    margin-bottom:45px;
+}
+
+.categoria h2{
+    margin-bottom:15px;
+}
+
+.lista-productos{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    scroll-behavior:smooth;
+}
+
+.lista-productos::-webkit-scrollbar{
+    height:10px;
+}
+
+.lista-productos::-webkit-scrollbar-thumb{
+    background:#bbb;
+    border-radius:10px;
+}
+
+.producto{
+    flex:0 0 220px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+    transition:.2s;
+}
+
+.producto:hover{
+    transform:translateY(-5px);
+}
+
+.producto img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.info{
+    padding:15px;
+}
+
+.info h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.precio{
+    color:#008000;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#0066ff;
+    color:white;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+button:hover{
+    background:#004ecc;
+}
+    </style>
+</head>
+<body>
+    {% for categoria in categorias %}
+        <section class="categoria">
+            <h2>{{ categoria.nombre }}</h2>
+            <div class="lista-productos">
+                {% for producto in categoria.productos.all %}
+                    <article class="producto">
+                        {% if producto.imagen %}
+                            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                        {% else %}
+                            <img src="https://placehold.co/300x200" alt="Sin imagen">
+                        {% endif %}
+                        <div class="info">
+                            <h3>{{ producto.nombre }}</h3>
+                            <div class="precio">${{ producto.precio }}</div>
+                            <button>Comprar</button>
+                        </div>
+                    </article>
+                {% empty %}
+                    <p>No hay productos en esta categoría.</p>
+                {% endfor %}
+            </div>
+
+        </section>
+    {% endfor %}
+</body>
 </html>
