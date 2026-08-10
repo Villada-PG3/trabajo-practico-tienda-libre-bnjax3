@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Tienda Libre</title>
+</head>
+<header>
+    <h1>Tiendalibre</h1>
+    <ul class="flex-menu">
+        <li><a href="/acerca/">Acerca de mí</a></li>
+        <li><a href="/productos/">Productos</a></li>
+    </ul>
+</header>
+<body>
+    <h3 style='color:#f5f5f5; padding-top:40px'>easter egg</h3>
+    <div class="hordiv">
+        <section class="habilidad" id="introduccion" style="width: 100%;">
+            <h1>Tienda Libre es un proyecto de ecommerce muy copado</h1>
+
+            <p style="margin-top:5px">
+                {% lorem 5 b random %}
+            </p>
+        </section>
+    </div>
+</body>
+</html>

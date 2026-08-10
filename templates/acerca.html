@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Tienda Libre</title>
+</head>
+<header>
+    <h1><a href="/">Tiendalibre</a></h1>
+    <ul class="flex-menu">
+        <li>Acerca de mí</li>
+        <li><a href="/productos/">Productos</a></li>
+    </ul>
+</header>
+<body>
+    
+    <main>
+        <div class="hordiv">
+            <section id="sobre-mi" class="habilidad">
+                <h2>Sobre mí</h2>
+
+                <div class="flex-container">
+                    <div class="img-with-text">
+                        <img class="perfil-img" src="https://picsum.photos/300" alt="Imagen Aleatoria" />
+                        <p style="font-size: small;">(Imagen obtenida aleatoriamente de picsum)</p>
+                    </div>
+
+                    <div style="width: 70%; height: 100%; padding-top: 0;">
+                        <p style="padding-top: -3px;">
+                            Hola, mi nombre es <b>Benjamín Fasioli.</b>
+                        </p>
+                        <p>Me interesa la tecnología, la programación de medio nivel y la matemática.</p>
+                        <p style="padding-top: -3px;">
+                            Esta página fue creada como trabajo práctico usando HTML,
+                            CSS y JavaScript.
+                        </p>
+                        <p style="padding-top: -3px;">
+                            Me gusta aprender nuevas herramientas y experimentar con
+                            diferentes estilos de diseño y programación.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="habilidades" class="habilidad">
+                <h2>Mis habilidades e intereses</h2>
+
+                <p>
+                    Algunas de las cosas que más me interesan dentro del mundo
+                    tecnológico son:
+                </p>
+
+                <ul>
+                    <li style="font-size: large; margin-left:10px;">Desarrollo de Videojuegos</li>
+                    <li style="font-size: large; margin-left:10px;">Programación de Medio Nivel</li>
+                    <li style="font-size: large; margin-left:10px;">Astronomía</li>
+                    <li style="font-size: large; margin-left:10px;">Sistemas Operativos</li>
+                </ul>
+            </section>
+        </div>
+        <div class="hordiv">
+            <section id="tabla" class="habilidad">
+                <h2>Tecnologías y nivel</h2>
+
+                <p>
+                    Esta tabla muestra algunas tecnologías que conozco y mi nivel
+                    aproximado en cada una.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Tecnología</th>
+                        <th>Nivel</th>
+                        <th>Años de uso</th>
+                    </tr>
+
+                    <tr style="background-color: #d8d5d5ff;">
+                        <td>Python</td>
+                        <td>Intermedio</td>
+                        <td>4</td>
+                    </tr>
+
+                    <tr style="background-color: #d0d0d0ff;">
+                        <td>Java</td>
+                        <td>Intermedio</td>
+                        <td>2</td>
+                    </tr>
+
+                    <tr style="background-color: #d8d5d5ff;">
+                        <td>HTML</td>
+                        <td>Básico</td>
+                        <td>1</td>
+                    </tr>
+
+                    <tr style="background-color: #d0d0d0ff;">
+                        <td>CSS</td>
+                        <td>Básico</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </section>
+            <section id="github" class="habilidad">
+                <h2>Mi GitHub</h2>
+
+                <div class="flex-container">
+                    <div class="img-with-text" style="padding-bottom: 0;">
+                        <img class="perfil-img" src="https://avatars.githubusercontent.com/u/153530323?v=4"
+                            alt="Perfil" />
+                        <p style="font-size: small;">bnjax3</p>
+                    </div>
+                    <div style="width: 50%;">
+                        <p style="padding-bottom: 50px;">
+                            Con este boton podes ver mi cuenta de github y mis proyectos subidos alli.
+                        </p>
+                        <a href="https://github.com/bnjax3">
+                            <button>Colaboremos!</button></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="hordiv">
+            <section class="habilidad" id="contacto" style="width: 100%;">
+                <h2>Formulario de contacto</h2>
+
+                <p>
+                    Podés enviarme un mensaje usando este formulario.
+                </p>
+
+                <form id="formularioContacto" style="width: 90%;">
+                    <div>
+                        <div>
+                            <div><label for="nombre" style="color: black; width: 100%">Nombre*</label></div>
+                            <div><input type="text" id="nombre"></div>
+                        </div>
+                        <div>
+                            <div><label for="email" style="color: black; width: 100%;">Email*</label></div>
+                            <div><input type="email" id="email"></div>
+                        </div>
+                    </div>
+                    <label for="mensaje" style="color: black;">Mensaje*</label>
+                    <textarea id="mensaje" rows="5"></textarea>
+
+                    <p id="contador">Caracteres: 0</p>
+
+                    <button type="submit">Enviar</button>
+
+                    <p id="mensajeEstado"></p>
+
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p style="color:white">© 2026 - Página creada para el trabajo práctico</p>
+    </footer>
+</body>
+</html>
